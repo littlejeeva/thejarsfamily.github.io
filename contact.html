@@ -128,7 +128,7 @@
       margin-bottom: 8px;
       color: #e5e7eb;
     }
-    p, li {
+    p, li, label {
       font-size: 14px;
     }
     ul {
@@ -136,6 +136,27 @@
     }
     a {
       color: #60a5fa;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 8px 10px;
+      margin: 6px 0 14px;
+      border-radius: 6px;
+      border: 1px solid #4b5563;
+      background: #020617;
+      color: #e5e7eb;
+    }
+    button {
+      background: #facc15;
+      color: #111827;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 999px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #eab308;
     }
     footer {
       text-align: center;
@@ -157,6 +178,7 @@
         </div>
       </div>
       <nav>
+        <a href="index.html">Home</a>
         <div class="dropdown">
           <button class="dropdown-button">Services ▾</button>
           <div class="dropdown-menu">
@@ -181,30 +203,66 @@
 
       <h2>Direct contact details</h2>
       <ul>
-        <li><strong>Email:</strong> yourname@email.com</li>
-        <li><strong>WhatsApp:</strong> +91-98xxxxxx (preferred for quick replies)</li>
-        <li><strong>Location:</strong> Delhi–NCR (working with clients worldwide)</li>
+        <li><strong>Email:</strong> <a href="mailto:little.jeeva24@gmail.com">little.jeeva24@gmail.com</a></li>
+        <li><strong>WhatsApp:</strong> +91 9576742925 (preferred for quick replies)</li>
+        <li><strong>Location:</strong> Delhi–NCR, working with clients worldwide</li>
       </ul>
 
-      <h2>How to share your project</h2>
-      <p>You can send:</p>
+      <h2>Quick project form (opens email)</h2>
+      <p>Fill this short form and click the button. It will open your email app with all details pre‑filled so you can attach a demo file before sending.</p>
+
+      <form onsubmit="sendMail(event)">
+        <label>Your name</label>
+        <input id="c-name" type="text" placeholder="Your name">
+
+        <label>Your email</label>
+        <input id="c-email" type="email" placeholder="Your email">
+
+        <label>Project summary</label>
+        <textarea id="c-details" rows="4" placeholder="Short description + deadline + budget idea"></textarea>
+
+        <button type="submit">Open email to send details</button>
+      </form>
+
+      <h2>Demo / sample file guide</h2>
+      <p><strong>How to add the demo file:</strong></p>
       <ul>
-        <li>A short description of the work.</li>
-        <li>Any reference files (screenshots, sample sheets, Figma, etc.).</li>
-        <li>Your deadline and rough budget range.</li>
+        <li>After clicking the yellow button, your email app (Gmail / Outlook / etc.) will open with a new message to The JARs.</li>
+        <li>Use the attach icon (paperclip) to add screenshots, Excel/CSV, images or a zip file as demo.</li>
+        <li>Before attaching, remove or hide real customer names, phone numbers, email IDs and any confidential business data.</li>
+        <li>You can send a small dummy dataset or blurred screenshots just to explain the structure of work.</li>
       </ul>
-
-      <h2>Demo / sample files</h2>
-      <p><strong>Important:</strong> Please remove or hide any real customer names, phone numbers, email IDs or confidential business data before sending a demo file.</p>
-      <p>For testing quality, you can create a small dummy dataset or blur sensitive information. The idea is to understand the task clearly without risking your internal data.</p>
-
-      <h2>Response time</h2>
-      <p>Usually replies go out within 24 hours. For urgent projects, mention “URGENT” in the subject or first line so that it is prioritised.</p>
     </div>
 
     <footer>
       &copy; 2025 The JARs. All rights reserved.
     </footer>
   </div>
+
+  <script>
+    function sendMail(event) {
+      event.preventDefault();
+
+      const name = document.getElementById('c-name').value.trim();
+      const email = document.getElementById('c-email').value.trim();
+      const details = document.getElementById('c-details').value.trim();
+
+      const to = 'little.jeeva24@gmail.com';
+      const subject = encodeURIComponent('New project enquiry from ' + (name || 'client'));
+      const bodyLines = [
+        'Name: ' + (name || ''),
+        'Email: ' + (email || ''),
+        '',
+        'Project details:',
+        details || '',
+        '',
+        'Attachment: Please add your demo/sample file before sending this email.'
+      ];
+      const body = encodeURIComponent(bodyLines.join('
+'));
+
+      window.location.href = 'mailto:' + to + '?subject=' + subject + '&body=' + body;
+    }
+  </script>
 </body>
 </html>
