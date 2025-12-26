@@ -2,63 +2,254 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Data annotation & AI training | The JARs</title>
+  <title>Service 1 – Data annotation & AI training | The JARs</title>
   <style>
-    body { font-family: Arial, sans-serif; margin:0; padding:0; background:#0f1020; color:#ffffff; }
-    header { background:#15162b; padding:12px 20px; display:flex; align-items:center; justify-content:space-between; position:sticky; top:0; }
-    header .logo { font-weight:bold; font-size:18px; }
-    nav a { color:#ffffff; text-decoration:none; margin-left:12px; font-size:14px; }
-    nav a:hover { text-decoration:underline; }
-    .section { max-width:900px; margin:20px auto 30px; padding:0 20px; }
-    h1 { font-size:28px; margin-bottom:10px; }
-    h2 { font-size:20px; margin-top:20px; }
-    ul { padding-left:18px; }
-    a { color:#61dafb; }
-    footer { text-align:center; padding:15px 10px; font-size:12px; background:#15162b; margin-top:40px; }
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #f9fafb;
+      background: url("wp2822477.png") no-repeat center center fixed;
+      background-size: cover;
+    }
+    .page-overlay {
+      min-height: 100vh;
+      background: rgba(0, 0, 0, 0.75);
+    }
+    header {
+      background: rgba(15, 23, 42, 0.9);
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(8px);
+    }
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: bold;
+      font-size: 18px;
+      color: #e5e7eb;
+    }
+    .logo-area img {
+      height: 32px;
+      width: 32px;
+      border-radius: 6px;
+      object-fit: cover;
+    }
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.2;
+    }
+    .logo-text span:first-child {
+      font-size: 18px;
+      font-weight: 700;
+    }
+    .logo-text span:last-child {
+      font-size: 11px;
+      color: #cbd5f5;
+    }
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      font-size: 14px;
+    }
+    nav a {
+      color: #e5e7eb;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    nav a:hover {
+      color: #facc15;
+    }
+    .dropdown {
+      position: relative;
+    }
+    .dropdown-button {
+      background: transparent;
+      border: none;
+      color: #e5e7eb;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+    }
+    .dropdown-button:hover {
+      color: #facc15;
+    }
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      right: 0;
+      top: 100%;
+      background: rgba(15, 23, 42, 0.95);
+      border-radius: 8px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+      min-width: 240px;
+      padding: 8px 0;
+      z-index: 20;
+    }
+    .dropdown-menu a {
+      display: block;
+      padding: 6px 14px;
+      color: #e5e7eb;
+      font-size: 13px;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .dropdown-menu a:hover {
+      background: rgba(30, 64, 175, 0.7);
+      color: #facc15;
+    }
+    .dropdown:hover .dropdown-menu {
+      display: block;
+    }
+
+    .hero {
+      max-width: 900px;
+      margin: 40px auto 20px;
+      padding: 20px 24px;
+      background: rgba(15, 23, 42, 0.95);
+      border-radius: 12px;
+      box-shadow: 0 12px 25px rgba(0,0,0,0.6);
+    }
+    .badge {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 999px;
+      background: #facc15;
+      color: #111827;
+      font-size: 12px;
+      margin-bottom: 8px;
+    }
+    h1 {
+      font-size: 26px;
+      margin: 6px 0 8px;
+      color: #e5e7eb;
+    }
+    .subtitle {
+      font-size: 14px;
+      color: #e5e7eb;
+      margin-bottom: 6px;
+    }
+    .tagline {
+      font-size: 13px;
+      color: #9ca3af;
+    }
+    .section {
+      max-width: 900px;
+      margin: 0 auto 20px;
+      padding: 20px 24px;
+      background: rgba(15, 23, 42, 0.95);
+      border-radius: 12px;
+      box-shadow: 0 12px 25px rgba(0,0,0,0.6);
+    }
+    h2 {
+      font-size: 20px;
+      margin-top: 0;
+      color: #e5e7eb;
+    }
+    p, li {
+      font-size: 14px;
+    }
+    ul {
+      padding-left: 18px;
+    }
+    a {
+      color: #60a5fa;
+    }
+    footer {
+      text-align: center;
+      padding: 15px 10px;
+      font-size: 12px;
+      background: rgba(15, 23, 42, 0.9);
+      margin-top: 40px;
+    }
   </style>
 </head>
 <body>
-  <header>
-    <div class="logo">The JARs</div>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="service1.html">Service 1</a>
-      <a href="service2.html">Service 2</a>
-      <a href="service3.html">Service 3</a>
-      <a href="service4.html">Service 4</a>
-      <a href="service5.html">Service 5</a>
-      <a href="service6.html">Service 6</a>
-      <a href="service7.html">Service 7</a>
-      <a href="service8.html">Service 8</a>
-      <a href="service9.html">Service 9</a>
-      <a href="service10.html">Service 10</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </header>
+  <div class="page-overlay">
+    <header>
+      <div class="logo-area">
+        <img src="IMG-20251226-WA0000.jpg" alt="The JARs logo">
+        <div class="logo-text">
+          <span>The JARs</span>
+          <span>Family-powered freelancing studio</span>
+        </div>
+      </div>
+      <nav>
+        <a href="index.html">Home</a>
+        <div class="dropdown">
+          <button class="dropdown-button">Services ▾</button>
+          <div class="dropdown-menu">
+            <a href="service1.html">Data annotation & AI training</a>
+            <a href="service2.html">Excel automation & dashboards</a>
+            <a href="service3.html">SQL queries & reporting</a>
+            <a href="service4.html">Logo design & branding</a>
+            <a href="service5.html">Kid influencer branding (Little Jeeva)</a>
+            <a href="service6.html">Social media content & reels ideas</a>
+            <a href="service7.html">Creative virtual assistance</a>
+            <a href="service8.html">Presentation & pitch deck design</a>
+            <a href="service9.html">Basic video editing & thumbnails</a>
+            <a href="service10.html">Custom projects</a>
+          </div>
+        </div>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </header>
 
-  <div class="section">
-    <h1>Data annotation & AI training</h1>
-    <p>Is service me hum images, text, videos ko high‑quality labels dete hain, taaki aapka AI model clear data par train ho sake. Outlier.ai level guidelines follow karte hain.</p>
+    <div class="hero">
+      <span class="badge">Service 1 · Data annotation</span>
+      <h1>Data annotation & AI training datasets</h1>
+      <p class="subtitle">Clean, consistent labels for computer vision, NLP and generative AI projects.</p>
+      <p class="tagline">You get small, carefully reviewed batches instead of anonymous crowd output.</p>
+    </div>
 
-    <h2>What you get</h2>
-    <ul>
-      <li>Image / text / video annotation (bounding boxes, classification, etc.).</li>
-      <li>Clean CSV / JSON outputs jo seedha model training me use ho sakte hain.</li>
-      <li>Quality checks, clear communication aur time par delivery.</li>
-    </ul>
+    <div class="section">
+      <h2>Why this service matters</h2>
+      <p>Freelance platforms list 100+ active data annotation and labeling jobs at any time, just on a single site like Upwork, showing how strongly AI teams depend on external annotators. [web:136][web:143]</p>
+      <p>Research on real‑world datasets finds that even benchmark test sets can contain around 3–6 percent wrong labels on average, and in messy production data error rates can go above 20 percent, which makes models much less reliable. [web:141][web:147][web:150]</p>
+    </div>
 
-    <h2>Best for</h2>
-    <ul>
-      <li>Startups jo apna AI model train karna chahte hain.</li>
-      <li>Researchers aur agencies jinko bulk data labeling chahiye.</li>
-    </ul>
+    <div class="section">
+      <h2>Quality vs. error rates in labeling</h2>
+      <ul>
+        <li>Studies on popular ML datasets estimate an average label error rate of about 3.3–3.4 percent, with some computer‑vision datasets such as ImageNet showing around 6 percent mislabeled examples. [web:147][web:150]</li>
+        <li>Industry analyses warn that crowdsourced labeling can produce much higher error levels, sometimes above 20 percent, which quickly makes a dataset unusable for training high‑stakes models. [web:141][web:142][web:145]</li>
+        <li>Specialised or managed teams that use consensus checks and review loops can push effective accuracy towards 99‑percent range, but this needs clear guidelines and structured QA instead of one‑shot crowd work. [web:142][web:151][web:153]</li>
+      </ul>
+      <p>Because of these gaps between quick crowd jobs and careful review, businesses are actively looking for small teams that can balance speed with accuracy and give predictable quality on every batch. [web:142][web:151]</p>
+    </div>
 
-    <h2>How to book</h2>
-    <p>Is service ke liye hamara <a href="FIVERR_LINK_YAHAN" target="_blank">Fiverr gig</a> open karein ya details bhejne ke liye <a href="contact.html">contact page</a> use karein.</p>
+    <div class="section">
+      <h2>How The JARs handles data annotation</h2>
+      <ul>
+        <li><strong>Task‑first scoping:</strong> Short sample batch to lock guidelines, edge cases and quality expectations before full‑scale work.</li>
+        <li><strong>Multi‑pass review:</strong> Separate first‑pass labeling and QA pass, so obvious errors, class confusion and missing boxes are caught early.</li>
+        <li><strong>Metrics you can track:</strong> Simple accuracy checks, disagreement flags and comments so you know where data is tricky instead of getting a black‑box result.</li>
+        <li><strong>Privacy‑conscious workflow:</strong> Preference for anonymised, masked or synthetic data wherever possible, with clear instructions if PII is present.</li>
+      </ul>
+      <p>For computer‑vision, NLP or RLHF‑style projects, this service focuses on smaller but high‑quality batches that you can plug straight into training pipelines without spending extra time cleaning after the vendor. [web:155][web:148]</p>
+    </div>
+
+    <div class="section">
+      <h2>Typical freelance use‑cases</h2>
+      <ul>
+        <li>Image and video bounding boxes, classification labels, segmentation masks or keypoints for vision models. [web:143]</li>
+        <li>Text labeling such as intent, sentiment, topic tagging, safety filtering and RLHF comparisons for chatbots. [web:136][web:146]</li>
+        <li>Ongoing quality checks on your existing labeled dataset to estimate real‑world error rate and suggest clean‑up priorities. [web:141][web:150]</li>
+      </ul>
+      <p>If you already have a task in mind, you can jump to the Contact page, send a small demo file and get a suggestion on the best labeling plan for that dataset. [web:131]</p>
+    </div>
+
+    <footer>
+      &copy; 2025 The JARs. All rights reserved.
+    </footer>
   </div>
-
-  <footer>
-    &copy; 2025 The JARs.
-  </footer>
 </body>
 </html>
