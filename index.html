@@ -105,15 +105,27 @@
     .hero {
       text-align: center;
       padding: 50px 20px 30px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
-    .hero img {
-      max-width: 260px;
-      border-radius: 12px;
+    .hero-logo-wrapper {
+      display: inline-block;
+      background: #f9fafb;
+      border-radius: 16px;
+      padding: 10px;
+      box-shadow: 0 12px 25px rgba(0,0,0,0.35);
       margin-bottom: 10px;
+    }
+    .hero-logo-wrapper img {
+      max-width: 260px;
+      height: auto;
+      display: block;
+      border-radius: 12px;
     }
     .badge {
       display: inline-block;
-      padding: 4px 10px;
+      padding: 4px 12px;
       border-radius: 999px;
       background: #facc15;
       color: #111827;
@@ -172,51 +184,4 @@
         <div class="dropdown-menu">
           <a href="service1.html">Data annotation & AI training</a>
           <a href="service2.html">Excel automation & dashboards</a>
-          <a href="service3.html">SQL queries & reporting</a>
-          <a href="service4.html">Logo design & branding</a>
-          <a href="service5.html">Kid influencer branding (Little Jeeva)</a>
-          <a href="service6.html">Social media content & reels ideas</a>
-          <a href="service7.html">Creative virtual assistance</a>
-          <a href="service8.html">Presentation & pitch deck design</a>
-          <a href="service9.html">Basic video editing & thumbnails</a>
-          <a href="service10.html">Custom projects</a>
-        </div>
-      </div>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </header>
-
-  <div class="hero">
-    <img src="IMG-20251226-WA0000.jpg" alt="The JARs logo">
-    <div class="badge">Family-powered freelancing studio</div>
-    <h1>Welcome to The JARs</h1>
-    <p class="subtitle">A creative family studio for data, design and content services.</p>
-  </div>
-
-  <div class="section">
-    <h2>About The JARs</h2>
-    <p>The JARs is a small family-driven studio that combines data skills, design thinking and content ideas in one place. We work remotely with clients who need reliable support instead of a big agency.</p>
-    <p>From training AI models and cleaning spreadsheets to designing logos and planning social media content, we keep everything simple, practical and easy to use.</p>
-  </div>
-
-  <div class="section">
-    <h2>What we can help with</h2>
-    <ul>
-      <li><strong>Data annotation & AI training:</strong> Clean, well-labeled datasets for computer vision or NLP projects.</li>
-      <li><strong>Excel & SQL:</strong> Automated reports, dashboards and queries so you always know what is happening in your numbers.</li>
-      <li><strong>Branding & design:</strong> Logos, basic brand kits and kid-influencer profiles that look consistent across platforms.</li>
-      <li><strong>Social content:</strong> Reels ideas, captions and simple editing so you can post faster without overthinking.</li>
-      <li><strong>Creative assistance:</strong> Research, presentations and custom projects when you need an extra brain on your side.</li>
-    </ul>
-  </div>
-
-  <div class="section">
-    <h2>Work with us</h2>
-    <p>The easiest way to start is to send your requirements from the <a href="contact.html">contact page</a>. We usually reply within 24 hours.</p>
-  </div>
-
-  <footer>
-    &copy; 2025 The JARs. All rights reserved.
-  </footer>
-</body>
-</html>
+          <a href="service3.html">SQL queries & reporting</
