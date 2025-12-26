@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact | The JARs</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin:0; padding:0; background:#0f1020; color:#ffffff; }
+    header { background:#15162b; padding:12px 20px; display:flex; align-items:center; justify-content:space-between; position:sticky; top:0; }
+    header .logo { font-weight:bold; font-size:18px; }
+    nav a { color:#ffffff; text-decoration:none; margin-left:12px; font-size:14px; }
+    nav a:hover { text-decoration:underline; }
+    .section { max-width:900px; margin:20px auto 30px; padding:0 20px; }
+    h1 { font-size:28px; margin-bottom:10px; }
+    label { display:block; margin:10px 0 4px; }
+    input, textarea {
+      width:100%;
+      padding:8px;
+      border-radius:4px;
+      border:1px solid #444;
+      background:#1a1b35;
+      color:#ffffff;
+    }
+    button {
+      margin-top:12px;
+      padding:10px 18px;
+      border:none;
+      background:#61dafb;
+      color:#000;
+      font-weight:bold;
+      border-radius:6px;
+      cursor:pointer;
+    }
+    button:hover { opacity:0.9; }
+    a { color:#61dafb; }
+    footer { text-align:center; padding:15px 10px; font-size:12px; background:#15162b; margin-top:40px; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">The JARs</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="service1.html">Service 1</a>
+      <a href="service2.html">Service 2</a>
+      <a href="service3.html">Service 3</a>
+      <a href="service4.html">Service 4</a>
+      <a href="service5.html">Service 5</a>
+      <a href="service6.html">Service 6</a>
+      <a href="service7.html">Service 7</a>
+      <a href="service8.html">Service 8</a>
+      <a href="service9.html">Service 9</a>
+      <a href="service10.html">Service 10</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <div class="section">
+    <h1>Contact The JARs</h1>
+    <p>Use the form below or reach out directly for any service or custom project.</p>
+
+    <h2>Direct contact</h2>
+    <ul>
+      <li>Email: <a href="mailto:YOUR_EMAIL_HERE">YOUR_EMAIL_HERE</a></li>
+      <li>WhatsApp / Phone: YOUR_PHONE_HERE</li>
+      <li>Fiverr: <a href="FIVERR_LINK_HERE" target="_blank">View our Fiverr profile</a></li>
+    </ul>
+
+    <h2>Send your project details</h2>
+    <!-- This form opens the user's email app with all details filled in -->
+    <form action="mailto:YOUR_EMAIL_HERE" method="post" enctype="text/plain">
+      <label for="name">Name</label>
+      <input id="name" name="Name" required>
+
+      <label for="email">Email</label>
+      <input id="email" name="Email" type="email" required>
+
+      <label for="phone">Phone / WhatsApp</label>
+      <input id="phone" name="Phone">
+
+      <label for="service">Required service</label>
+      <input id="service" name="Service">
+
+      <label for="message">Project details</label>
+      <textarea id="message" name="Message" rows="4" required></textarea>
+
+      <button type="submit">Send details</button>
+    </form>
+
+    <p style="margin-top:10px; font-size:12px;">
+      When you click “Send details”, your email app will open with these fields filled in,
+      and you can review and send the message to us.
+    </p>
+  </div>
+
+  <footer>
+    &copy; 2025 The JARs.
+  </footer>
+</body>
+</html>
