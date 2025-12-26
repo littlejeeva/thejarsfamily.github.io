@@ -8,31 +8,97 @@
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background: #111827;   /* softer dark blue */
+      background: #111827;
       color: #f9fafb;
     }
     header {
       background: linear-gradient(90deg, #1f2937, #4b5563);
-      padding: 12px 20px;
+      padding: 10px 20px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       position: sticky;
       top: 0;
+      z-index: 10;
     }
-    header .logo {
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 10px;
       font-weight: bold;
       font-size: 18px;
+    }
+    .logo-area img {
+      height: 32px;
+      border-radius: 6px;
+    }
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.2;
+    }
+    .logo-text span:first-child {
+      font-size: 18px;
+      font-weight: 700;
+    }
+    .logo-text span:last-child {
+      font-size: 11px;
+      color: #e5e7eb;
+    }
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      font-size: 14px;
     }
     nav a {
       color: #e5e7eb;
       text-decoration: none;
-      margin-left: 12px;
-      font-size: 14px;
       font-weight: 500;
     }
     nav a:hover {
       color: #facc15;
+    }
+    .dropdown {
+      position: relative;
+    }
+    .dropdown-button {
+      background: transparent;
+      border: none;
+      color: #e5e7eb;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+    }
+    .dropdown-button:hover {
+      color: #facc15;
+    }
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      right: 0;
+      top: 100%;
+      background: #111827;
+      border-radius: 8px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+      min-width: 240px;
+      padding: 8px 0;
+      z-index: 20;
+    }
+    .dropdown-menu a {
+      display: block;
+      padding: 6px 14px;
+      color: #e5e7eb;
+      font-size: 13px;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .dropdown-menu a:hover {
+      background: #1f2937;
+      color: #facc15;
+    }
+    .dropdown:hover .dropdown-menu {
+      display: block;
     }
     .hero {
       text-align: center;
@@ -41,6 +107,7 @@
     .hero img {
       max-width: 220px;
       border-radius: 12px;
+      margin-bottom: 10px;
     }
     .badge {
       display: inline-block;
@@ -49,10 +116,22 @@
       background: #facc15;
       color: #111827;
       font-size: 12px;
-      margin: 10px 0;
+      margin: 8px 0 4px;
     }
-    h1 { font-size: 32px; margin: 10px 0; text-align: center; }
-    h2 { font-size: 24px; margin-top: 30px; }
+    h1 {
+      font-size: 32px;
+      margin: 10px 0 6px;
+      text-align: center;
+    }
+    .subtitle {
+      font-size: 14px;
+      color: #e5e7eb;
+      margin-bottom: 20px;
+    }
+    h2 {
+      font-size: 24px;
+      margin-top: 0;
+    }
     .section {
       max-width: 900px;
       margin: 0 auto 30px;
@@ -61,8 +140,12 @@
       border-radius: 12px;
       box-shadow: 0 12px 25px rgba(0,0,0,0.25);
     }
-    ul { padding-left: 18px; }
-    a { color: #60a5fa; }
+    ul {
+      padding-left: 18px;
+    }
+    a {
+      color: #60a5fa;
+    }
     footer {
       text-align: center;
       padding: 15px 10px;
@@ -74,50 +157,59 @@
 </head>
 <body>
   <header>
-    <div class="logo">The JARs</div>
+    <div class="logo-area">
+      <img src="LOGO_URL_HERE" alt="The JARs logo">
+      <div class="logo-text">
+        <span>The JARs</span>
+        <span>Family-powered freelancing studio</span>
+      </div>
+    </div>
     <nav>
-      <a href="index.html">Home</a>
-      <a href="service1.html">Service 1</a>
-      <a href="service2.html">Service 2</a>
-      <a href="service3.html">Service 3</a>
-      <a href="service4.html">Service 4</a>
-      <a href="service5.html">Service 5</a>
-      <a href="service6.html">Service 6</a>
-      <a href="service7.html">Service 7</a>
-      <a href="service8.html">Service 8</a>
-      <a href="service9.html">Service 9</a>
-      <a href="service10.html">Service 10</a>
+      <div class="dropdown">
+        <button class="dropdown-button">Services ▾</button>
+        <div class="dropdown-menu">
+          <a href="service1.html">Data annotation & AI training</a>
+          <a href="service2.html">Excel automation & dashboards</a>
+          <a href="service3.html">SQL queries & reporting</a>
+          <a href="service4.html">Logo design & branding</a>
+          <a href="service5.html">Kid influencer branding (Little Jeeva)</a>
+          <a href="service6.html">Social media content & reels ideas</a>
+          <a href="service7.html">Creative virtual assistance</a>
+          <a href="service8.html">Presentation & pitch deck design</a>
+          <a href="service9.html">Basic video editing & thumbnails</a>
+          <a href="service10.html">Custom projects</a>
+        </div>
+      </div>
       <a href="contact.html">Contact</a>
     </nav>
   </header>
 
   <div class="hero">
-    <img src="LOGO_URL_YAHAN" alt="The JARs logo">
     <div class="badge">Family-powered freelancing studio</div>
     <h1>Welcome to The JARs</h1>
-    <p>Jeeva, Aaditya, Rakesh & Savita – one family studio for data, design and content services.</p>
+    <p class="subtitle">A creative family studio for data, design and content services.</p>
   </div>
 
   <div class="section">
-    <h2>Our Services</h2>
+    <h2>About The JARs</h2>
+    <p>The JARs is a small family-driven studio that combines data skills, design thinking and content ideas in one place. We work remotely with clients who need reliable support instead of a big agency.</p>
+    <p>From training AI models and cleaning spreadsheets to designing logos and planning social media content, we keep everything simple, practical and easy to use.</p>
+  </div>
+
+  <div class="section">
+    <h2>What we can help with</h2>
     <ul>
-      <li><a href="service1.html">Data annotation & AI training</a></li>
-      <li><a href="service2.html">Excel automation & dashboards</a></li>
-      <li><a href="service3.html">SQL queries & reporting</a></li>
-      <li><a href="service4.html">Logo design & branding</a></li>
-      <li><a href="service5.html">Kid influencer branding (Little Jeeva)</a></li>
-      <li><a href="service6.html">Social media content & reels ideas</a></li>
-      <li><a href="service7.html">Creative virtual assistance</a></li>
-      <li><a href="service8.html">Presentation & pitch deck design</a></li>
-      <li><a href="service9.html">Basic video editing & thumbnails</a></li>
-      <li><a href="service10.html">Custom projects</a></li>
+      <li><strong>Data annotation & AI training:</strong> Clean, well-labeled datasets for computer vision or NLP projects.</li>
+      <li><strong>Excel & SQL:</strong> Automated reports, dashboards and queries so you always know what is happening in your numbers.</li>
+      <li><strong>Branding & design:</strong> Logos, basic brand kits and kid-influencer profiles that look consistent across platforms.</li>
+      <li><strong>Social content:</strong> Reels ideas, captions and simple editing so you can post faster without overthinking.</li>
+      <li><strong>Creative assistance:</strong> Research, presentations and custom projects when you need an extra brain on your side.</li>
     </ul>
   </div>
 
   <div class="section">
     <h2>Work with us</h2>
-    <p>Best place to book our services:</p>
-    <p><a href="#" target="_blank">Fiverr profile (coming soon)</a></p>
+    <p>The easiest way to start is to send your requirements from the <a href="contact.html">contact page</a>. We usually reply within 24 hours.</p>
   </div>
 
   <footer>
