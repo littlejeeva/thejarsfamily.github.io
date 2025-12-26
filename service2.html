@@ -2,63 +2,254 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Excel automation & dashboards | The JARs</title>
+  <title>Service 2 – Excel automation & dashboards | The JARs</title>
   <style>
-    body { font-family: Arial, sans-serif; margin:0; padding:0; background:#0f1020; color:#ffffff; }
-    header { background:#15162b; padding:12px 20px; display:flex; align-items:center; justify-content:space-between; position:sticky; top:0; }
-    header .logo { font-weight:bold; font-size:18px; }
-    nav a { color:#ffffff; text-decoration:none; margin-left:12px; font-size:14px; }
-    nav a:hover { text-decoration:underline; }
-    .section { max-width:900px; margin:20px auto 30px; padding:0 20px; }
-    h1 { font-size:28px; margin-bottom:10px; }
-    h2 { font-size:20px; margin-top:20px; }
-    ul { padding-left:18px; }
-    a { color:#61dafb; }
-    footer { text-align:center; padding:15px 10px; font-size:12px; background:#15162b; margin-top:40px; }
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #f9fafb;
+      background: url("wp2822477.png") no-repeat center center fixed;
+      background-size: cover;
+    }
+    .page-overlay {
+      min-height: 100vh;
+      background: rgba(0, 0, 0, 0.75);
+    }
+    header {
+      background: rgba(15, 23, 42, 0.9);
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(8px);
+    }
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: bold;
+      font-size: 18px;
+      color: #e5e7eb;
+    }
+    .logo-area img {
+      height: 32px;
+      width: 32px;
+      border-radius: 6px;
+      object-fit: cover;
+    }
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.2;
+    }
+    .logo-text span:first-child {
+      font-size: 18px;
+      font-weight: 700;
+    }
+    .logo-text span:last-child {
+      font-size: 11px;
+      color: #cbd5f5;
+    }
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      font-size: 14px;
+    }
+    nav a {
+      color: #e5e7eb;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    nav a:hover {
+      color: #facc15;
+    }
+    .dropdown {
+      position: relative;
+    }
+    .dropdown-button {
+      background: transparent;
+      border: none;
+      color: #e5e7eb;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+    }
+    .dropdown-button:hover {
+      color: #facc15;
+    }
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      right: 0;
+      top: 100%;
+      background: rgba(15, 23, 42, 0.95);
+      border-radius: 8px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+      min-width: 240px;
+      padding: 8px 0;
+      z-index: 20;
+    }
+    .dropdown-menu a {
+      display: block;
+      padding: 6px 14px;
+      color: #e5e7eb;
+      font-size: 13px;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .dropdown-menu a:hover {
+      background: rgba(30, 64, 175, 0.7);
+      color: #facc15;
+    }
+    .dropdown:hover .dropdown-menu {
+      display: block;
+    }
+
+    .hero {
+      max-width: 900px;
+      margin: 40px auto 20px;
+      padding: 20px 24px;
+      background: rgba(15, 23, 42, 0.95);
+      border-radius: 12px;
+      box-shadow: 0 12px 25px rgba(0,0,0,0.6);
+    }
+    .badge {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 999px;
+      background: #facc15;
+      color: #111827;
+      font-size: 12px;
+      margin-bottom: 8px;
+    }
+    h1 {
+      font-size: 26px;
+      margin: 6px 0 8px;
+      color: #e5e7eb;
+    }
+    .subtitle {
+      font-size: 14px;
+      color: #e5e7eb;
+      margin-bottom: 6px;
+    }
+    .tagline {
+      font-size: 13px;
+      color: #9ca3af;
+    }
+    .section {
+      max-width: 900px;
+      margin: 0 auto 20px;
+      padding: 20px 24px;
+      background: rgba(15, 23, 42, 0.95);
+      border-radius: 12px;
+      box-shadow: 0 12px 25px rgba(0,0,0,0.6);
+    }
+    h2 {
+      font-size: 20px;
+      margin-top: 0;
+      color: #e5e7eb;
+    }
+    p, li {
+      font-size: 14px;
+    }
+    ul {
+      padding-left: 18px;
+    }
+    a {
+      color: #60a5fa;
+    }
+    footer {
+      text-align: center;
+      padding: 15px 10px;
+      font-size: 12px;
+      background: rgba(15, 23, 42, 0.9);
+      margin-top: 40px;
+    }
   </style>
 </head>
 <body>
-  <header>
-    <div class="logo">The JARs</div>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="service1.html">Service 1</a>
-      <a href="service2.html">Service 2</a>
-      <a href="service3.html">Service 3</a>
-      <a href="service4.html">Service 4</a>
-      <a href="service5.html">Service 5</a>
-      <a href="service6.html">Service 6</a>
-      <a href="service7.html">Service 7</a>
-      <a href="service8.html">Service 8</a>
-      <a href="service9.html">Service 9</a>
-      <a href="service10.html">Service 10</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </header>
+  <div class="page-overlay">
+    <header>
+      <div class="logo-area">
+        <img src="IMG-20251226-WA0000.jpg" alt="The JARs logo">
+        <div class="logo-text">
+          <span>The JARs</span>
+          <span>Family-powered freelancing studio</span>
+        </div>
+      </div>
+      <nav>
+        <a href="index.html">Home</a>
+        <div class="dropdown">
+          <button class="dropdown-button">Services ▾</button>
+          <div class="dropdown-menu">
+            <a href="service1.html">Data annotation & AI training</a>
+            <a href="service2.html">Excel automation & dashboards</a>
+            <a href="service3.html">SQL queries & reporting</a>
+            <a href="service4.html">Logo design & branding</a>
+            <a href="service5.html">Kid influencer branding (Little Jeeva)</a>
+            <a href="service6.html">Social media content & reels ideas</a>
+            <a href="service7.html">Creative virtual assistance</a>
+            <a href="service8.html">Presentation & pitch deck design</a>
+            <a href="service9.html">Basic video editing & thumbnails</a>
+            <a href="service10.html">Custom projects</a>
+          </div>
+        </div>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </header>
 
-  <div class="section">
-    <h1>Excel automation & dashboards</h1>
-    <p>We build smart Excel files that automate your routine work and turn raw data into clear, easy-to-read dashboards.</p>
+    <div class="hero">
+      <span class="badge">Service 2 · Excel & dashboards</span>
+      <h1>Excel automation & business dashboards</h1>
+      <p class="subtitle">Turn messy spreadsheets into fast, reliable reports that update in one click.</p>
+      <p class="tagline">Ideal for founders, managers and freelancers who live inside Excel all day.</p>
+    </div>
 
-    <h2>What you get</h2>
-    <ul>
-      <li>Custom formulas, pivot tables, and automation for your daily reports.</li>
-      <li>Clean, well-structured workbooks that anyone on your team can use.</li>
-      <li>Optional charts and KPI dashboards for fast decision-making.</li>
-    </ul>
+    <div class="section">
+      <h2>Why this service matters</h2>
+      <p>On major freelance platforms there are easily a thousand plus active Microsoft Excel projects at any time, many of them asking for dashboards, automation and cleanup rather than simple data entry.</p>
+      <p>At the same time, research on business spreadsheets shows that the majority of real‑world files contain errors in their formulas, which quietly distort reports and decisions if nobody audits them properly.</p>
+    </div>
 
-    <h2>Best for</h2>
-    <ul>
-      <li>Freelancers and small businesses tracking sales, expenses, or performance.</li>
-      <li>Anyone who is tired of doing the same Excel tasks manually every day.</li>
-    </ul>
+    <div class="section">
+      <h2>Spreadsheet errors vs. real decisions</h2>
+      <ul>
+        <li>Multiple studies on operational spreadsheets have found that a very high share of business workbooks contain at least one significant mistake, often because of copy‑paste formulas or changes made in a hurry.</li>
+        <li>Audits of real files used for reporting suggest that error rates of a few percent of all formula cells are common, and some older studies even reported that almost nine out of ten spreadsheets contained at least one serious issue.</li>
+        <li>Because dashboards often sit on top of these workbooks, a single wrong reference or sign can flip profit, stock or campaign numbers and send teams in the wrong direction.</li>
+      </ul>
+      <p>Cleaning structure and automating calculations reduces the risk of silent errors and gives you more confidence that every refresh is showing a truthful picture of the business.</p>
+    </div>
 
-    <h2>How to book</h2>
-    <p>Book this service via our <a href="FIVERR_LINK_YAHAN" target="_blank">Fiverr gig</a> or send your details from the <a href="contact.html">contact page</a>.</p>
+    <div class="section">
+      <h2>How The JARs handles Excel work</h2>
+      <ul>
+        <li><strong>Audit before build:</strong> Review existing files, find hard‑coded numbers, inconsistent formulas and broken links before designing the final dashboard.</li>
+        <li><strong>Separate input and output:</strong> Clear input sheets, lookup tables and assumptions on one side, and locked report sheets or dashboards on the other side.</li>
+        <li><strong>Smart automation:</strong> Use formulas, pivot tables, Power Query and, where needed, simple macros so that refreshing with new data is a one‑step process.</li>
+        <li><strong>Explainer notes:</strong> Short documentation directly inside the file so that a non‑technical client can understand what to change and what to leave untouched.</li>
+      </ul>
+      <p>The goal is to make reports that you can safely hand over to a client, manager or investor without worrying that one accidental edit will break the whole model.</p>
+    </div>
+
+    <div class="section">
+      <h2>Typical freelance use‑cases</h2>
+      <ul>
+        <li>Sales, revenue or marketing dashboards that combine multiple raw files and show KPIs by day, region, channel or product line.</li>
+        <li>Finance and operations models that track cash runway, margins, inventory and key ratios with automatic charts and summaries.</li>
+        <li>Cleanup and restructuring of legacy spreadsheets so that formulas are consistent, easier to maintain and ready to scale to more data.</li>
+      </ul>
+      <p>If you have sample files or a rough sketch of the dashboard you want, you can share them through the Contact page and get a practical suggestion on how to structure your Excel model.</p>
+    </div>
+
+    <footer>
+      &copy; 2025 The JARs. All rights reserved.
+    </footer>
   </div>
-
-  <footer>
-    &copy; 2025 The JARs.
-  </footer>
 </body>
 </html>
