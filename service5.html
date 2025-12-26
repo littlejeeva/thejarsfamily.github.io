@@ -2,63 +2,254 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Kid influencer branding (Little Jeeva style) | The JARs</title>
+  <title>Service 5 – Kid influencer branding (Little Jeeva) | The JARs</title>
   <style>
-    body { font-family: Arial, sans-serif; margin:0; padding:0; background:#0f1020; color:#ffffff; }
-    header { background:#15162b; padding:12px 20px; display:flex; align-items:center; justify-content:space-between; position:sticky; top:0; }
-    header .logo { font-weight:bold; font-size:18px; }
-    nav a { color:#ffffff; text-decoration:none; margin-left:12px; font-size:14px; }
-    nav a:hover { text-decoration:underline; }
-    .section { max-width:900px; margin:20px auto 30px; padding:0 20px; }
-    h1 { font-size:28px; margin-bottom:10px; }
-    h2 { font-size:20px; margin-top:20px; }
-    ul { padding-left:18px; }
-    a { color:#61dafb; }
-    footer { text-align:center; padding:15px 10px; font-size:12px; background:#15162b; margin-top:40px; }
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #f9fafb;
+      background: url("wp2822477.png") no-repeat center center fixed;
+      background-size: cover;
+    }
+    .page-overlay {
+      min-height: 100vh;
+      background: rgba(0, 0, 0, 0.75);
+    }
+    header {
+      background: rgba(15, 23, 42, 0.9);
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(8px);
+    }
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: bold;
+      font-size: 18px;
+      color: #e5e7eb;
+    }
+    .logo-area img {
+      height: 32px;
+      width: 32px;
+      border-radius: 6px;
+      object-fit: cover;
+    }
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.2;
+    }
+    .logo-text span:first-child {
+      font-size: 18px;
+      font-weight: 700;
+    }
+    .logo-text span:last-child {
+      font-size: 11px;
+      color: #cbd5f5;
+    }
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      font-size: 14px;
+    }
+    nav a {
+      color: #e5e7eb;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    nav a:hover {
+      color: #facc15;
+    }
+    .dropdown {
+      position: relative;
+    }
+    .dropdown-button {
+      background: transparent;
+      border: none;
+      color: #e5e7eb;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+    }
+    .dropdown-button:hover {
+      color: #facc15;
+    }
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      right: 0;
+      top: 100%;
+      background: rgba(15, 23, 42, 0.95);
+      border-radius: 8px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+      min-width: 240px;
+      padding: 8px 0;
+      z-index: 20;
+    }
+    .dropdown-menu a {
+      display: block;
+      padding: 6px 14px;
+      color: #e5e7eb;
+      font-size: 13px;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .dropdown-menu a:hover {
+      background: rgba(30, 64, 175, 0.7);
+      color: #facc15;
+    }
+    .dropdown:hover .dropdown-menu {
+      display: block;
+    }
+
+    .hero {
+      max-width: 900px;
+      margin: 40px auto 20px;
+      padding: 20px 24px;
+      background: rgba(15, 23, 42, 0.95);
+      border-radius: 12px;
+      box-shadow: 0 12px 25px rgba(0,0,0,0.6);
+    }
+    .badge {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 999px;
+      background: #facc15;
+      color: #111827;
+      font-size: 12px;
+      margin-bottom: 8px;
+    }
+    h1 {
+      font-size: 26px;
+      margin: 6px 0 8px;
+      color: #e5e7eb;
+    }
+    .subtitle {
+      font-size: 14px;
+      color: #e5e7eb;
+      margin-bottom: 6px;
+    }
+    .tagline {
+      font-size: 13px;
+      color: #9ca3af;
+    }
+    .section {
+      max-width: 900px;
+      margin: 0 auto 20px;
+      padding: 20px 24px;
+      background: rgba(15, 23, 42, 0.95);
+      border-radius: 12px;
+      box-shadow: 0 12px 25px rgba(0,0,0,0.6);
+    }
+    h2 {
+      font-size: 20px;
+      margin-top: 0;
+      color: #e5e7eb;
+    }
+    p, li {
+      font-size: 14px;
+    }
+    ul {
+      padding-left: 18px;
+    }
+    a {
+      color: #60a5fa;
+    }
+    footer {
+      text-align: center;
+      padding: 15px 10px;
+      font-size: 12px;
+      background: rgba(15, 23, 42, 0.9);
+      margin-top: 40px;
+    }
   </style>
 </head>
 <body>
-  <header>
-    <div class="logo">The JARs</div>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="service1.html">Service 1</a>
-      <a href="service2.html">Service 2</a>
-      <a href="service3.html">Service 3</a>
-      <a href="service4.html">Service 4</a>
-      <a href="service5.html">Service 5</a>
-      <a href="service6.html">Service 6</a>
-      <a href="service7.html">Service 7</a>
-      <a href="service8.html">Service 8</a>
-      <a href="service9.html">Service 9</a>
-      <a href="service10.html">Service 10</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </header>
+  <div class="page-overlay">
+    <header>
+      <div class="logo-area">
+        <img src="IMG-20251226-WA0000.jpg" alt="The JARs logo">
+        <div class="logo-text">
+          <span>The JARs</span>
+          <span>Family-powered freelancing studio</span>
+        </div>
+      </div>
+      <nav>
+        <a href="index.html">Home</a>
+        <div class="dropdown">
+          <button class="dropdown-button">Services ▾</button>
+          <div class="dropdown-menu">
+            <a href="service1.html">Data annotation & AI training</a>
+            <a href="service2.html">Excel automation & dashboards</a>
+            <a href="service3.html">SQL queries & reporting</a>
+            <a href="service4.html">Logo design & branding</a>
+            <a href="service5.html">Kid influencer branding (Little Jeeva)</a>
+            <a href="service6.html">Social media content & reels ideas</a>
+            <a href="service7.html">Creative virtual assistance</a>
+            <a href="service8.html">Presentation & pitch deck design</a>
+            <a href="service9.html">Basic video editing & thumbnails</a>
+            <a href="service10.html">Custom projects</a>
+          </div>
+        </div>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </header>
 
-  <div class="section">
-    <h1>Kid influencer branding (Little Jeeva style)</h1>
-    <p>We help parents build a safe, lovable kid influencer brand on Instagram, Facebook, and YouTube — inspired by Little Jeeva.</p>
+    <div class="hero">
+      <span class="badge">Service 5 · Kid influencer branding</span>
+      <h1>Kid influencer branding (Little Jeeva)</h1>
+      <p class="subtitle">Build a safe, cute and consistent online brand around a child creator.</p>
+      <p class="tagline">Made for parents who want opportunities, but also strong boundaries.</p>
+    </div>
 
-    <h2>What you get</h2>
-    <ul>
-      <li>Profile setup: bio, highlights, and overall visual theme for your child.</li>
-      <li>Content plan with post and reel ideas for 1–4 weeks.</li>
-      <li>Basic growth tips using reels, collaborations, and stories—without fake followers.</li>
-    </ul>
+    <div class="section">
+      <h2>Why this service matters</h2>
+      <p>Creator‑economy reports estimate millions of active creators worldwide, and a noticeable slice of this growth is coming from children and pre‑teens who appear in family vlogs, toy reviews, fashion and learning content. [web:221][web:230]</p>
+      <p>Studies on Gen Alpha show that a large part of their product discovery happens through influencers and online videos, which means a kid creator with a clear brand can strongly influence both other children and their parents. [web:221][web:220]</p>
+    </div>
 
-    <h2>Best for</h2>
-    <ul>
-      <li>Parents who want to start kid influencer pages in a thoughtful, safe way.</li>
-      <li>Small brands that want to collaborate with kid creators.</li>
-    </ul>
+    <div class="section">
+      <h2>Opportunities vs. safety for kid creators</h2>
+      <ul>
+        <li>Kid influencers can create very high trust because their content feels like watching a friend rather than an advertisement, which is why brands in toys, fashion and learning actively seek them out. [web:217][web:227]</li>
+        <li>At the same time, experts and child‑safety groups highlight serious risks around privacy, over‑sharing and audience behaviour, which has led to new safeguarding guidelines and stricter platform policies in recent years. [web:225][web:234]</li>
+        <li>Parents are expected to act as managers, filters and co‑creators so that every video, collab or brand deal respects the child’s comfort and long‑term wellbeing, not just short‑term views. [web:225][web:232]</li>
+      </ul>
+      <p>This service is designed around the idea that a kid’s brand should grow slowly, with age‑appropriate content, clear off‑camera boundaries and full parental control over all decisions. [web:218][web:222]</p>
+    </div>
 
-    <h2>How to book</h2>
-    <p>Book this service via our <a href="FIVERR_LINK_YAHAN" target="_blank">Fiverr gig</a> or send your details from the <a href="contact.html">contact page</a>.</p>
+    <div class="section">
+      <h2>How The JARs handles kid influencer branding</h2>
+      <ul>
+        <li><strong>Parent‑first discovery:</strong> A structured conversation with parents about values, non‑negotiable rules, screen‑time limits and which platforms are allowed. [web:218][web:231]</li>
+        <li><strong>Simple brand identity:</strong> Name, logo, colours and tone that feel playful and child‑friendly but still look professional for brands and agencies.</li>
+        <li><strong>Content buckets:</strong> Clear categories such as “fun learning”, “daily life”, “fashion”, “toys” or “sports” so that the audience knows what to expect and the child is not pressured to share everything. [web:216][web:220]</li>
+        <li><strong>Safety‑aware collab process:</strong> Basic checklist for evaluating brand offers, including product fit, workload for the child and any red flags around messaging or audience targeting. [web:225][web:233]</li>
+      </ul>
+      <p>The focus stays on long‑term reputation and joy for the child creator, not on chasing every trend or campaign that appears in the inbox. [web:218][web:229]</p>
+    </div>
+
+    <div class="section">
+      <h2>Typical freelance use‑cases</h2>
+      <ul>
+        <li>Launching or polishing the online identity of a kid creator like Little Jeeva with a consistent logo, colours and bio across YouTube, Instagram and Shorts. [web:218]</li>
+        <li>Designing content ideas and posting schedules that fit school, hobbies and family life instead of turning content into a full‑time job. [web:221]</li>
+        <li>Helping parents understand basic analytics, brand‑deal structures and deliverables so that they can negotiate confidently on behalf of their child. [web:220][web:224]</li>
+      </ul>
+      <p>If you are a parent exploring a kid‑influencer journey, you can describe your child’s interests on the Contact page to get a low‑pressure plan for how to start safely and professionally. [web:218][web:228]</p>
+    </div>
+
+    <footer>
+      &copy; 2025 The JARs. All rights reserved.
+    </footer>
   </div>
-
-  <footer>
-    &copy; 2025 The JARs.
-  </footer>
 </body>
 </html>
