@@ -2,63 +2,254 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Presentation & pitch deck design | The JARs</title>
+  <title>Service 8 – Presentation & pitch deck design | The JARs</title>
   <style>
-    body { font-family: Arial, sans-serif; margin:0; padding:0; background:#0f1020; color:#ffffff; }
-    header { background:#15162b; padding:12px 20px; display:flex; align-items:center; justify-content:space-between; position:sticky; top:0; }
-    header .logo { font-weight:bold; font-size:18px; }
-    nav a { color:#ffffff; text-decoration:none; margin-left:12px; font-size:14px; }
-    nav a:hover { text-decoration:underline; }
-    .section { max-width:900px; margin:20px auto 30px; padding:0 20px; }
-    h1 { font-size:28px; margin-bottom:10px; }
-    h2 { font-size:20px; margin-top:20px; }
-    ul { padding-left:18px; }
-    a { color:#61dafb; }
-    footer { text-align:center; padding:15px 10px; font-size:12px; background:#15162b; margin-top:40px; }
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #f9fafb;
+      background: url("wp2822477.png") no-repeat center center fixed;
+      background-size: cover;
+    }
+    .page-overlay {
+      min-height: 100vh;
+      background: rgba(0, 0, 0, 0.75);
+    }
+    header {
+      background: rgba(15, 23, 42, 0.9);
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(8px);
+    }
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: bold;
+      font-size: 18px;
+      color: #e5e7eb;
+    }
+    .logo-area img {
+      height: 32px;
+      width: 32px;
+      border-radius: 6px;
+      object-fit: cover;
+    }
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.2;
+    }
+    .logo-text span:first-child {
+      font-size: 18px;
+      font-weight: 700;
+    }
+    .logo-text span:last-child {
+      font-size: 11px;
+      color: #cbd5f5;
+    }
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      font-size: 14px;
+    }
+    nav a {
+      color: #e5e7eb;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    nav a:hover {
+      color: #facc15;
+    }
+    .dropdown {
+      position: relative;
+    }
+    .dropdown-button {
+      background: transparent;
+      border: none;
+      color: #e5e7eb;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+    }
+    .dropdown-button:hover {
+      color: #facc15;
+    }
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      right: 0;
+      top: 100%;
+      background: rgba(15, 23, 42, 0.95);
+      border-radius: 8px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+      min-width: 240px;
+      padding: 8px 0;
+      z-index: 20;
+    }
+    .dropdown-menu a {
+      display: block;
+      padding: 6px 14px;
+      color: #e5e7eb;
+      font-size: 13px;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .dropdown-menu a:hover {
+      background: rgba(30, 64, 175, 0.7);
+      color: #facc15;
+    }
+    .dropdown:hover .dropdown-menu {
+      display: block;
+    }
+
+    .hero {
+      max-width: 900px;
+      margin: 40px auto 20px;
+      padding: 20px 24px;
+      background: rgba(15, 23, 42, 0.95);
+      border-radius: 12px;
+      box-shadow: 0 12px 25px rgba(0,0,0,0.6);
+    }
+    .badge {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 999px;
+      background: #facc15;
+      color: #111827;
+      font-size: 12px;
+      margin-bottom: 8px;
+    }
+    h1 {
+      font-size: 26px;
+      margin: 6px 0 8px;
+      color: #e5e7eb;
+    }
+    .subtitle {
+      font-size: 14px;
+      color: #e5e7eb;
+      margin-bottom: 6px;
+    }
+    .tagline {
+      font-size: 13px;
+      color: #9ca3af;
+    }
+    .section {
+      max-width: 900px;
+      margin: 0 auto 20px;
+      padding: 20px 24px;
+      background: rgba(15, 23, 42, 0.95);
+      border-radius: 12px;
+      box-shadow: 0 12px 25px rgba(0,0,0,0.6);
+    }
+    h2 {
+      font-size: 20px;
+      margin-top: 0;
+      color: #e5e7eb;
+    }
+    p, li {
+      font-size: 14px;
+    }
+    ul {
+      padding-left: 18px;
+    }
+    a {
+      color: #60a5fa;
+    }
+    footer {
+      text-align: center;
+      padding: 15px 10px;
+      font-size: 12px;
+      background: rgba(15, 23, 42, 0.9);
+      margin-top: 40px;
+    }
   </style>
 </head>
 <body>
-  <header>
-    <div class="logo">The JARs</div>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="service1.html">Service 1</a>
-      <a href="service2.html">Service 2</a>
-      <a href="service3.html">Service 3</a>
-      <a href="service4.html">Service 4</a>
-      <a href="service5.html">Service 5</a>
-      <a href="service6.html">Service 6</a>
-      <a href="service7.html">Service 7</a>
-      <a href="service8.html">Service 8</a>
-      <a href="service9.html">Service 9</a>
-      <a href="service10.html">Service 10</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </header>
+  <div class="page-overlay">
+    <header>
+      <div class="logo-area">
+        <img src="IMG-20251226-WA0000.jpg" alt="The JARs logo">
+        <div class="logo-text">
+          <span>The JARs</span>
+          <span>Family-powered freelancing studio</span>
+        </div>
+      </div>
+      <nav>
+        <a href="index.html">Home</a>
+        <div class="dropdown">
+          <button class="dropdown-button">Services ▾</button>
+          <div class="dropdown-menu">
+            <a href="service1.html">Data annotation & AI training</a>
+            <a href="service2.html">Excel automation & dashboards</a>
+            <a href="service3.html">SQL queries & reporting</a>
+            <a href="service4.html">Logo design & branding</a>
+            <a href="service5.html">Kid influencer branding</a>
+            <a href="service6.html">Social media content & reels ideas</a>
+            <a href="service7.html">Creative virtual assistance</a>
+            <a href="service8.html">Presentation & pitch deck design</a>
+            <a href="service9.html">Basic video editing & thumbnails</a>
+            <a href="service10.html">Custom projects</a>
+          </div>
+        </div>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </header>
 
-  <div class="section">
-    <h1>Presentation & pitch deck design</h1>
-    <p>We transform rough ideas and bullets into clean, professional slide decks that are ready for clients, investors, or classrooms.</p>
+    <div class="hero">
+      <span class="badge">Service 8 · Presentations & pitch decks</span>
+      <h1>Presentation & pitch deck design</h1>
+      <p class="subtitle">Clear, visual decks that explain your story without overwhelming the audience.</p>
+      <p class="tagline">Useful for startup pitches, client proposals, internal reviews and training sessions.</p>
+    </div>
 
-    <h2>What you get</h2>
-    <ul>
-      <li>PowerPoint or Google Slides deck with clear structure and flow.</li>
-      <li>Visuals, icons, and simple charts that support your key messages.</li>
-      <li>Feedback on storytelling, slide order, and call-to-action.</li>
-    </ul>
+    <div class="section">
+      <h2>Why this service matters</h2>
+      <p>There are thousands of open presentation‑design and pitch‑deck jobs on freelance platforms at any moment, which shows how many teams struggle to convert ideas into slides that actually land.</p>
+      <p>Investors and decision‑makers often spend only a few minutes on a deck, so structure, clarity and design decide very quickly whether they stay interested or move on.</p>
+    </div>
 
-    <h2>Best for</h2>
-    <ul>
-      <li>Startups preparing for investor or client presentations.</li>
-      <li>Students and professionals who want their slides to stand out.</li>
-    </ul>
+    <div class="section">
+      <h2>Common presentation problems</h2>
+      <ul>
+        <li>Slides are overloaded with text and numbers, forcing people to read instead of listening to the presenter.</li>
+        <li>There is no clear narrative, just a collection of screenshots and bullet points that do not lead to a specific decision.</li>
+        <li>Design is inconsistent across fonts, colours and spacing, which makes even strong ideas look unpolished and hard to trust.</li>
+      </ul>
+      <p>Fixing structure and visual hierarchy usually has a bigger impact than adding more animations or complex graphics.</p>
+    </div>
 
-    <h2>How to book</h2>
-    <p>Book this service via our <a href="FIVERR_LINK_YAHAN" target="_blank">Fiverr gig</a> or send your details from the <a href="contact.html">contact page</a>.</p>
+    <div class="section">
+      <h2>How The JARs handles presentation design</h2>
+      <ul>
+        <li><strong>Story first:</strong> Start with a simple outline covering problem, solution, proof, plan and ask, so every slide has a reason to exist.</li>
+        <li><strong>Visual hierarchy:</strong> Use consistent fonts, colours and spacing to guide the eye to the single most important message on each slide.</li>
+        <li><strong>Data storytelling:</strong> Turn tables and raw charts into clean visuals with clear captions, instead of dumping screenshots from Excel.</li>
+        <li><strong>Flexible formats:</strong> Deliver in PowerPoint, Google Slides or PDF so you can edit and reuse the deck after the project ends.</li>
+      </ul>
+      <p>The goal is a deck you feel confident presenting, whether you are on a Zoom call, in a boardroom or sending it as a standalone document.</p>
+    </div>
+
+    <div class="section">
+      <h2>Typical freelance use‑cases</h2>
+      <ul>
+        <li>Startup pitch decks for seed to Series‑A rounds, including narrative, slide flow and visual polish.</li>
+        <li>Client proposal decks for agencies, consultants and freelancers who need to communicate value clearly and quickly.</li>
+        <li>Internal presentations for reviews, trainings or strategy updates that must be clear even for people who join midway.</li>
+      </ul>
+      <p>If you share your existing slides or a rough outline via the Contact page, this service can turn them into a focused, investor‑ and stakeholder‑ready deck.</p>
+    </div>
+
+    <footer>
+      &copy; 2025 The JARs. All rights reserved.
+    </footer>
   </div>
-
-  <footer>
-    &copy; 2025 The JARs.
-  </footer>
 </body>
 </html>
